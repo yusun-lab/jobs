@@ -3,14 +3,15 @@
     <router-link to="/">Home</router-link> |
     <router-link to="/about">About</router-link>
   </nav>
-  <router-view/>
+  <!-- router-view is where the content of the current route will be rendered -->
+  <router-view />
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { defineComponent } from "vue";
 
 export default defineComponent({
-  name: 'App'
+  name: "App",
 });
 </script>
 
