@@ -10,6 +10,7 @@ const routes: Array<RouteRecordRaw> = [
   },
   {
     path: "/about",
+    // path: "/about-us",
     name: "about",
 
     component: AboutView,
