@@ -3,6 +3,7 @@ import HomeView from "../views/HomeView.vue";
 import AboutView from "../views/AboutView.vue";
 import JobsView from "../views/jobs/JobsView.vue";
 import JobDetailsView from "../views/jobs/JobDetailsView.vue";
+import NotFound from "../views/NotFound.vue";
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -30,6 +31,19 @@ const routes: Array<RouteRecordRaw> = [
     component: JobDetailsView,
     // equivalent to props: (route) => route.params
     props: true,
+  },
+
+  //redirect
+  {
+    path: "/all-jobs",
+    redirect: "/jobs",
+  },
+
+  // catch all 404
+  {
+    path: "/:catchAll(.*)",
+    name: "NotFound",
+    component: NotFound,
   },
 ];
 
