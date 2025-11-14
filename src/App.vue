@@ -4,15 +4,32 @@
     <router-link :to="{ name: 'about' }">About</router-link> |
     <router-link :to="{ name: 'jobs' }">Jobs</router-link>
   </nav>
+
+  <button @click="goBack">Go Back</button>
+  <button @click="redirect">Redirect</button>
+  <button @click="goForward">Go Forward</button>
+
   <router-view />
 </template>
 
-<script lang="ts">
-import { defineComponent } from "vue";
+<script setup lang="ts">
+import { useRouter } from "vue-router";
+const router = useRouter();
 
-export default defineComponent({
-  name: "App",
-});
+const redirect = () => {
+  // These three are equivalent
+  // router.push("/");
+  // router.push({ path: "/" });
+  router.push({ name: "home" });
+};
+
+const goBack = () => {
+  router.go(-1);
+};
+
+const goForward = () => {
+  router.go(1);
+};
 </script>
 
 <style>
@@ -40,5 +57,12 @@ nav a {
 nav a.router-link-exact-active {
   color: white;
   background: crimson;
+}
+
+button {
+  margin: 0 10px;
+  padding: 10px;
+  border-radius: 4px;
+  border: none;
 }
 </style>
