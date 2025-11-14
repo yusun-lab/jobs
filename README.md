@@ -2,6 +2,10 @@
 
 A minimal Vue 3 + TypeScript app scaffolded with Vue CLI, showcasing Vue Router 4 features such as named routes, dynamic route params, redirects, and a 404 catch‑all. The app includes simple navigation and examples of programmatic routing (go back/forward, redirect) from `App.vue`.
 
+## Live Demo
+
+- https://jobs-theta-eight.vercel.app/
+
 ## Tech Stack
 
 - **Vue 3** (Composition API, Single File Components)
@@ -78,3 +82,22 @@ Programmatic navigation examples are implemented in `App.vue` using `useRouter()
 
 - Vue CLI configuration: see `vue.config.js` and the Vue CLI docs.
 - Browser support: see `.browserslistrc`.
+
+## Deployment (Vercel)
+
+This project is deployed on Vercel. Typical settings for Vue CLI builds:
+
+- **Framework Preset**: Other
+- **Build Command**: `npm run build`
+- **Output Directory**: `dist`
+- **Install Command**: `npm install` (or default)
+
+If you use the Vercel CLI:
+
+```bash
+npm i -g vercel
+vercel                       # first-time setup (select project, link repo)
+vercel --prod                # deploy production
+```
+
+Note: Vue Router is configured with HTML5 history. Vercel automatically serves `index.html` for 404s; if you customize rewrites, ensure unknown routes fall back to `/index.html`.
